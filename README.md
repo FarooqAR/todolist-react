@@ -5,4 +5,4 @@ npm install
 ```
 npm run dev
 ```
-indexedDb is used for storing todos.
+Tested in Chrome
