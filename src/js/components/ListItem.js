@@ -1,11 +1,11 @@
 import React from 'react';
-import db from '../db';
 export default class ListItem extends React.Component{
     constructor(){
         super();
     }
     deleteTodo(){
-        this.props.deleteTodo(this.props.time);
+        var props = this.props;
+        props.deleteTodo({_id: props.time, text:props.text});
     }
     modifyTodo(){
         var todo = {};
@@ -13,7 +13,7 @@ export default class ListItem extends React.Component{
         todo.text = prompt("Edit todo:",this.props.text);
         todo.text = todo.text === "" || todo.text === null ? this.props.text : todo.text;
 
-        this.props.modifyTodo(this.props.time, todo);
+        this.props.modifyTodo(todo);
     }
     render(){
         var props = this.props;

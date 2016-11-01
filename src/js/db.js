@@ -1,6 +1,3 @@
-var db = new Dexie("todoList");
-db.version(1).stores({
-    // table_name : "keyPath"
-    todos: "_id"    
-});
+var db = new PouchDB("todoList");
+
 export default db;
